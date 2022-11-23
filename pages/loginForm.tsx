@@ -31,12 +31,12 @@ export default function LoginForm() {
             <div className={styles.div1}>
                 <h2>Sign in to start your session</h2>
                 <Card.Divider />
-                <Input css={{ "marginToop": "2px" }} bordered labelPlaceholder="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+                <Input css={{ "marginTop": "10px" }} bordered labelPlaceholder="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
                 <Spacer y={0.15}></Spacer>
                 <Input bordered type={"password"} labelPlaceholder="password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
                 <Spacer y={0.15} />
 
-                <Button type="submit" onClick={() => handlePost()} >Sign In</Button>
+                <Button size="sm" type="submit" onClick={() => handlePost()} >Sign In</Button>
                 <Checkbox size="sm" label="Remember me"> Remember me</Checkbox>
             </div>
         </div >

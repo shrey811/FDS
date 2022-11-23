@@ -9,7 +9,8 @@
   display: flex;
   flex-direction: column;
   }
-  @media screen and (min-width: 480px) {
+
+  @media screen and (min-height: 200px) {
 
   .div1 {
     width: 40%;
