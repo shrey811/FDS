@@ -1,8 +1,10 @@
-import { Button, Card, Checkbox, Col, Container, Grid, Input, Row, Spacer, Text } from "@nextui-org/react";
+import { Image, Button, Card, Checkbox, Col, Container, Grid, Input, Row, Spacer, Text } from "@nextui-org/react";
 import { Dispatch, SetStateAction, useState } from "react";
 import { render } from "react-dom";
 import styles from '../styles/home.module.css'
 import postLogin from "./axios";
+import { AiOutlineMail } from 'react-icons/ai';
+
 
 interface Values {
     email: string;
@@ -25,21 +27,60 @@ export default function LoginForm() {
     }
 
     return (
+        <div className="login">
+            <div style={{ width: '680px', margin: 'auto', marginTop: '10rem' }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: 'center' }}>
+                    <div>
+                        <Image src='https://thehungryhetauda.com/images/logo-small-color.svg' height={"70px"} />
+                    </div>
 
-        <div className={styles.container}>
-            {/* <Image srr="" alt="Default Image" /> */}
-            <div className={styles.div1}>
-                <h2>Sign in to start your session</h2>
-                <Card.Divider />
-                <Input css={{ "marginTop": "10px" }} bordered labelPlaceholder="email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
-                <Spacer y={0.15}></Spacer>
-                <Input bordered type={"password"} labelPlaceholder="password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
-                <Spacer y={0.15} />
+                    <Text size={30}>
+                        Hungry Hetauda
+                    </Text>
 
-                <Button size="sm" type="submit" onClick={() => handlePost()} >Sign In</Button>
-                <Checkbox size="sm" label="Remember me"> Remember me</Checkbox>
+                </div>
+                <Card css={{ background: "rgb(223, 223, 219)" }} >
+                    <Card.Body>
+                        <Row justify="center" >
+                            <Col span={5}>
+                                <div>
+                                    <h2>Sign in to start your session</h2>
+                                    <Card.Divider />
+
+
+                                    <Spacer y={1.5} />
+
+                                    <Input width="18rem" bordered labelPlaceholder="Email" onChange={(e) => setUser({ ...user, email: e.target.value })} ></Input>
+
+                                    <Spacer y={1.5} ></Spacer>
+                                    <Input width="18rem" bordered type={"password"} labelPlaceholder="Password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
+                                    <Spacer y={1} />
+
+                                    <Checkbox size="sm" label="Remember me"> Remember me</Checkbox>
+
+                                    <Spacer y={1} />
+                                    <Row>
+                                        <Col></Col>
+                                        <Button size="md" type="submit" onClick={() => handlePost()} >Sign In </Button>
+                                    </Row>
+                                </div>
+                            </Col>
+                            <Col>
+
+                                <Spacer x={10} />
+
+                                <div className="img">
+                                    <Image width={200} src='https://images.unsplash.com/photo-1619221882220-947b3d3c8861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGZvb2QlMjBkZWxpdmVyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' />
+                                </div>
+                            </Col>
+
+                        </Row>
+                    </Card.Body>
+                </Card>
+                {/* <Container css={{ alignItems: "center", justifyContent: 'center', borderTop: "5px solid Green", borderRadius: "10px" }}> */}
+                {/* </Container> */}
             </div>
-        </div >
+        </div>
 
     )
 
